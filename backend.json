@@ -474,8 +474,8 @@
             "uid": "prometheus"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "histogram_quantile(0.95, sum by(le) (rate(ruby_queue_time_bucket{service=\"$web_service\"}[1m])))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.95, sum by (le) (ruby_queue_time_bucket{service=\"$web_service\"}))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -490,8 +490,8 @@
             "uid": "prometheus"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "histogram_quantile(0.75, sum by(le) (rate(ruby_queue_time_bucket{service=\"$web_service\"}[1m])))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.75, sum by (le) (ruby_queue_time_bucket{service=\"$web_service\"}))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -506,8 +506,8 @@
             "uid": "prometheus"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "histogram_quantile(0.5, sum by(le) (rate(ruby_queue_time_bucket{service=\"$web_service\"}[1m])))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.5, sum by (le) (ruby_queue_time_bucket{service=\"$web_service\"}))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -772,8 +772,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -875,8 +874,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -991,8 +989,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1109,8 +1106,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1210,8 +1206,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1305,8 +1300,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1400,8 +1394,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1495,8 +1488,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1590,8 +1582,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1685,8 +1676,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1968,13 +1958,13 @@
     ]
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "Europe/Helsinki",
   "title": "Backend",
   "uid": "dda47547-b950-49ce-8e7c-80b14c60df1f",
-  "version": 6,
-  "weekStart": ""
+  "version": 11,
+  "weekStart": "monday"
 }
