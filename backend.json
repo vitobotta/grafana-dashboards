@@ -475,7 +475,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(ruby_queue_time_bucket{service=\"$web_service\"}[7m])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(ruby_queue_time_bucket{service=\"$web_service\"}[5m])) by (le))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -491,7 +491,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "histogram_quantile(0.75, sum(rate(ruby_queue_time_bucket{service=\"$web_service\"}[7m])) by (le))",
+          "expr": "histogram_quantile(0.75, sum(rate(ruby_queue_time_bucket{service=\"$web_service\"}[5m])) by (le))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -507,7 +507,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "histogram_quantile(0.5, sum(rate(ruby_queue_time_bucket{service=\"$web_service\"}[7m])) by (le))",
+          "expr": "histogram_quantile(0.5, sum(rate(ruby_queue_time_bucket{service=\"$web_service\"}[5m])) by (le))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -1590,7 +1590,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1684,7 +1685,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1732,7 +1734,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "",
+  "refresh": "1m",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
@@ -1973,6 +1975,6 @@
   "timezone": "Europe/Helsinki",
   "title": "Backend",
   "uid": "dda47547-b950-49ce-8e7c-80b14c60df1f",
-  "version": 12,
+  "version": 13,
   "weekStart": "monday"
 }
