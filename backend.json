@@ -475,11 +475,11 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(ruby_queue_time_bucket{service=\"$web_service\"}[5m])) by (le))",
+          "expr": "histogram_quantile(0.90, sum(rate(ruby_queue_time_bucket{service=\"$web_service\"}[5m])) by (le))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
-          "legendFormat": "p95",
+          "legendFormat": "p90",
           "range": true,
           "refId": "B",
           "useBackend": false
