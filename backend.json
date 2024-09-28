@@ -31,7 +31,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -88,7 +88,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -108,7 +108,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -195,7 +195,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -211,7 +211,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -232,7 +232,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "description": "",
       "fieldConfig": {
@@ -319,7 +319,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -334,7 +334,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -351,7 +351,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -368,7 +368,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -389,7 +389,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -471,7 +471,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -487,7 +487,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -503,7 +503,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -523,7 +523,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -603,7 +603,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "editorMode": "builder",
           "expr": "sum(rate(ruby_http_requests_total{service=\"$web_service\",status=~\"^[23].*\"}[1m])) by (status) > 0",
@@ -618,7 +618,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -698,7 +698,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -727,7 +727,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "description": "",
       "fieldConfig": {
@@ -811,7 +811,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -830,7 +830,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "description": "",
       "fieldConfig": {
@@ -916,7 +916,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -947,7 +947,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -1029,7 +1029,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -1044,7 +1044,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -1064,7 +1064,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -1145,7 +1145,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -1164,7 +1164,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -1243,7 +1243,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "editorMode": "code",
           "expr": "avg by(controller, action) (ruby_http_request_sql_duration_seconds{service=\"main-web\"})",
@@ -1258,7 +1258,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -1337,7 +1337,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "editorMode": "code",
           "expr": "avg(ruby_http_request_duration_seconds) by(controller, action)",
@@ -1352,7 +1352,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -1431,7 +1431,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "editorMode": "builder",
           "expr": "sum(ruby_active_record_connection_pool_connections)",
@@ -1446,7 +1446,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -1525,7 +1525,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "editorMode": "builder",
           "expr": "sum(ruby_active_record_connection_pool_waiting{service=\"main-web\"})",
@@ -1540,7 +1540,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -1619,7 +1619,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "editorMode": "builder",
           "expr": "sum(ruby_active_record_connection_pool_busy)",
@@ -1634,7 +1634,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -1713,7 +1713,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "editorMode": "builder",
           "expr": "sum(ruby_active_record_connection_pool_idle)",

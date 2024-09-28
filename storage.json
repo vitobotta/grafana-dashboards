@@ -34,7 +34,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "gridPos": {
         "h": 1,
@@ -48,7 +48,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "refId": "A"
         }
@@ -587,7 +587,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "fill": 10,
           "fillGradient": 0,
@@ -628,7 +628,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "Thanos"
               },
               "expr": "(\n  (\n    ((kubelet_volume_stats_used_bytes {namespace=~\"(openshift-.*|kube-.*|default|logging)\"} ) * 0) + 1\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes {namespace=~\"(openshift-.*|kube-.*|default|logging)\"}[1d], 7 * 24 * 60 * 60) < 0)\n  )\n)",
               "instant": false,
@@ -920,7 +920,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "fill": 10,
           "fillGradient": 0,
@@ -961,7 +961,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "Thanos"
               },
               "expr": "(\n  (\n    (\n      (\n        (kubelet_volume_stats_used_bytes {namespace!~\"(openshift-.*|kube-.*|default|logging)\"})\n      )\n      * 0 + 1\n    )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes[1d], 7 * 24 * 60 * 60) < 0)\n  )\n)",
               "instant": false,

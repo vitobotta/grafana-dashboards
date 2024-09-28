@@ -49,7 +49,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -95,7 +95,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "exemplar": true,
           "expr": "histogram_quantile(0.95, sum(rate(anycable_rpc_call_runtime_seconds_bucket[1m])) by (method,command,le))",
@@ -142,7 +142,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -188,7 +188,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "exemplar": true,
           "expr": "sum(rate(anycable_rpc_call_count[1m])) by (method, command, status)",

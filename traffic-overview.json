@@ -57,7 +57,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "description": "",
       "fieldConfig": {
@@ -109,7 +109,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "editorMode": "code",
           "expr": "sum(increase(nginx_ingress_controller_requests{ ingress=~\"main\"}[${__range_s}s]))",
@@ -320,7 +320,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "Thanos"
       },
       "description": "",
       "gridPos": {
@@ -339,7 +339,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "Thanos"
           },
           "refId": "A"
         }
