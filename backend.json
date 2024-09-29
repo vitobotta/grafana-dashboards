@@ -591,8 +591,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 9,
+        "w": 24,
         "x": 0,
         "y": 25
       },
@@ -653,7 +653,7 @@
           "refId": "C"
         }
       ],
-      "title": "Puma",
+      "title": "Puma Capacity vs Utilization",
       "type": "timeseries"
     },
     {
@@ -716,10 +716,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 6,
-        "x": 12,
-        "y": 25
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 34
       },
       "id": 30,
       "options": {
@@ -811,10 +811,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 6,
-        "x": 18,
-        "y": 25
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 34
       },
       "id": 43,
       "options": {
@@ -851,7 +851,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 43
       },
       "id": 6,
       "type": "row"
@@ -921,7 +921,7 @@
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 44
       },
       "id": 12,
       "options": {
@@ -1023,7 +1023,7 @@
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 44
       },
       "id": 2,
       "options": {
@@ -1070,7 +1070,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 56
       },
       "id": 4,
       "panels": [
@@ -1121,8 +1121,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1239,8 +1238,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1340,8 +1338,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1435,8 +1432,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1530,8 +1526,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1625,8 +1620,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1720,8 +1714,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1815,8 +1808,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2119,6 +2111,6 @@
   "timezone": "Europe/Helsinki",
   "title": "Backend",
   "uid": "dda47547-b950-49ce-8e7c-80b14c60df1f",
-  "version": 34,
+  "version": 37,
   "weekStart": "monday"
 }
