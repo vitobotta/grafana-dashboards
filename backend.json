@@ -539,6 +539,105 @@
       "fieldConfig": {
         "defaults": {
           "color": {
+            "mode": "continuous-blues"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 8,
+        "x": 0,
+        "y": 25
+      },
+      "id": 32,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Thanos"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "sum by (service) (ruby_puma_max_threads{service=\"$web_service\"})",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "Max Threads",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Puma Max Threads",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edzaqq6d0854wc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
             "mode": "palette-classic"
           },
           "custom": {
@@ -591,12 +690,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
+        "h": 10,
+        "w": 8,
+        "x": 8,
         "y": 25
       },
-      "id": 32,
+      "id": 44,
       "options": {
         "legend": {
           "calcs": [],
@@ -614,21 +713,6 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
-          },
-          "disableTextWrap": false,
-          "editorMode": "code",
-          "expr": "sum by (service) (ruby_puma_max_threads{service=\"$web_service\"})",
-          "fullMetaSearch": false,
-          "includeNullMetadata": true,
-          "legendFormat": "Max Threads",
-          "range": true,
-          "refId": "A",
-          "useBackend": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
             "uid": "edzaqq6d0854wc"
           },
           "editorMode": "code",
@@ -638,7 +722,91 @@
           "legendFormat": "Pool Capacity",
           "range": true,
           "refId": "B"
+        }
+      ],
+      "title": "Puma Available Threads",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edzaqq6d0854wc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 8,
+        "x": 16,
+        "y": 25
+      },
+      "id": 45,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
         {
           "datasource": {
             "type": "prometheus",
@@ -648,12 +816,12 @@
           "expr": "round(\n          (\n            sum by (service) (ruby_puma_max_threads{service=\"$web_service\"}) -\n            sum by (service) (ruby_puma_thread_pool_capacity{service=\"$web_service\"})\n          ) /\n          sum by (service) (ruby_puma_max_threads{service=\"$web_service\"})\n          * 100\n        )",
           "hide": false,
           "instant": false,
-          "legendFormat": "Thread Utilization %",
+          "legendFormat": "Pool Capacity",
           "range": true,
-          "refId": "C"
+          "refId": "B"
         }
       ],
-      "title": "Puma Capacity vs Utilization",
+      "title": "Puma Threads Utilization %",
       "type": "timeseries"
     },
     {
@@ -719,7 +887,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 35
       },
       "id": 30,
       "options": {
@@ -814,7 +982,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 35
       },
       "id": 43,
       "options": {
@@ -851,7 +1019,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 44
       },
       "id": 6,
       "type": "row"
@@ -921,7 +1089,7 @@
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 44
+        "y": 45
       },
       "id": 12,
       "options": {
@@ -1023,7 +1191,7 @@
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 44
+        "y": 45
       },
       "id": 2,
       "options": {
@@ -1070,7 +1238,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 57
       },
       "id": 4,
       "panels": [
@@ -2111,6 +2279,6 @@
   "timezone": "Europe/Helsinki",
   "title": "Backend",
   "uid": "dda47547-b950-49ce-8e7c-80b14c60df1f",
-  "version": 37,
+  "version": 38,
   "weekStart": "monday"
 }
