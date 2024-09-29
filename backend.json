@@ -719,12 +719,12 @@
           "expr": "round(\n          (\n            sum by (service) (ruby_puma_max_threads{service=\"$web_service\"}) -\n            sum by (service) (ruby_puma_thread_pool_capacity{service=\"$web_service\"})\n          ) /\n          sum by (service) (ruby_puma_max_threads{service=\"$web_service\"})\n          * 100\n        )",
           "hide": false,
           "instant": false,
-          "legendFormat": "Pool Capacity Utilization %",
+          "legendFormat": "Puma Thread Pool Utilization %",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "Pool Capacity Utilization %",
+      "title": "Puma Thread Pool Utilization %",
       "type": "timeseries"
     },
     {
@@ -887,7 +887,7 @@
         "x": 12,
         "y": 38
       },
-      "id": 43,
+      "id": 46,
       "options": {
         "legend": {
           "calcs": [],
@@ -907,14 +907,18 @@
             "type": "prometheus",
             "uid": "Thanos"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "sum(rate(ruby_http_requests_total{service=\"$web_service\",status=~\"^[23].*\"}[1m])) by (status) > 0",
+          "expr": "sum(rate(ruby_http_requests_total{service=\"$web_service\",status=~\"^[45].*\"}[1m])) by (status) > 0",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
-      "title": "Successful requests/sec",
+      "title": "Errors/sec",
       "type": "timeseries"
     },
     {
@@ -2171,7 +2175,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-3h",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
@@ -2189,6 +2193,6 @@
   "timezone": "Europe/Helsinki",
   "title": "Backend",
   "uid": "dda47547-b950-49ce-8e7c-80b14c60df1f",
-  "version": 41,
+  "version": 44,
   "weekStart": "monday"
 }
