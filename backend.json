@@ -592,7 +592,7 @@
       },
       "gridPos": {
         "h": 10,
-        "w": 8,
+        "w": 12,
         "x": 0,
         "y": 25
       },
@@ -628,103 +628,6 @@
         }
       ],
       "title": "Puma Max Threads",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "edzaqq6d0854wc"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 8,
-        "x": 8,
-        "y": 25
-      },
-      "id": 44,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "maxHeight": 600,
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "edzaqq6d0854wc"
-          },
-          "editorMode": "code",
-          "expr": "sum by (service) (ruby_puma_thread_pool_capacity{service=\"$web_service\"})",
-          "hide": false,
-          "instant": false,
-          "legendFormat": "Pool Capacity",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "Puma Available Threads",
       "type": "timeseries"
     },
     {
@@ -788,8 +691,8 @@
       },
       "gridPos": {
         "h": 10,
-        "w": 8,
-        "x": 16,
+        "w": 12,
+        "x": 12,
         "y": 25
       },
       "id": 45,
@@ -813,15 +716,28 @@
             "uid": "edzaqq6d0854wc"
           },
           "editorMode": "code",
+          "expr": "100 - round(\n          (\n            sum by (service) (ruby_puma_max_threads{service=\"$web_service\"}) -\n            sum by (service) (ruby_puma_thread_pool_capacity{service=\"$web_service\"})\n          ) /\n          sum by (service) (ruby_puma_max_threads{service=\"$web_service\"})\n          * 100\n        )",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Available Pool Capacity %",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "edzaqq6d0854wc"
+          },
+          "editorMode": "code",
           "expr": "round(\n          (\n            sum by (service) (ruby_puma_max_threads{service=\"$web_service\"}) -\n            sum by (service) (ruby_puma_thread_pool_capacity{service=\"$web_service\"})\n          ) /\n          sum by (service) (ruby_puma_max_threads{service=\"$web_service\"})\n          * 100\n        )",
           "hide": false,
           "instant": false,
-          "legendFormat": "Pool Capacity",
+          "legendFormat": "Pool Capacity Utilization %",
           "range": true,
-          "refId": "B"
+          "refId": "A"
         }
       ],
-      "title": "Puma Threads Utilization %",
+      "title": "Puma Capacity Available vs Utilization %",
       "type": "timeseries"
     },
     {
@@ -2279,6 +2195,6 @@
   "timezone": "Europe/Helsinki",
   "title": "Backend",
   "uid": "dda47547-b950-49ce-8e7c-80b14c60df1f",
-  "version": 38,
+  "version": 39,
   "weekStart": "monday"
 }
