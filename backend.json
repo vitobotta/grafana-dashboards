@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 8,
+  "id": 2668,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -44,7 +44,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -100,7 +100,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -132,7 +132,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -219,7 +219,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -235,7 +235,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -269,7 +269,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "description": "",
       "fieldConfig": {
@@ -356,7 +356,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -371,7 +371,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -388,7 +388,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -405,7 +405,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -426,7 +426,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "edzaqq6d0854wc"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -508,7 +508,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -524,7 +524,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "edzaqq6d0854wc"
+            "uid": "default"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.90, sum(rate(ruby_queue_time_bucket{service=\"$web_service\"}[3m])) by (le))",
@@ -537,7 +537,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -553,7 +553,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -573,12 +573,12 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "edzaqq6d0854wc"
+        "uid": "fdzgxe3ekjc3kf"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "continuous-blues"
+            "mode": "continuous-BlYlRd"
           },
           "custom": {
             "axisBorderShow": false,
@@ -653,7 +653,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -672,7 +672,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "edzaqq6d0854wc"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -752,7 +752,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "edzaqq6d0854wc"
+            "uid": "default"
           },
           "editorMode": "code",
           "expr": "round(\n          (\n            sum by (service) (ruby_puma_max_threads{service=\"$web_service\"}) -\n            sum by (service) (ruby_puma_thread_pool_capacity{service=\"$web_service\"})\n          ) /\n          sum by (service) (ruby_puma_max_threads{service=\"$web_service\"})\n          * 100\n        )",
@@ -782,7 +782,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -862,7 +862,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "editorMode": "builder",
           "expr": "sum(rate(ruby_http_requests_total{service=\"$web_service\",status=~\"^[23].*\"}[1m])) by (status) > 0",
@@ -877,7 +877,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -957,7 +957,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -976,7 +976,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "edzaqq6d0854wc"
+        "uid": "default"
       },
       "description": "",
       "fieldConfig": {
@@ -1021,8 +1021,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1060,7 +1059,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1079,7 +1078,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "description": "",
       "fieldConfig": {
@@ -1124,8 +1123,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1165,7 +1163,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -1197,7 +1195,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -1241,8 +1239,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1280,7 +1277,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -1295,7 +1292,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -1315,7 +1312,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -1359,8 +1356,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1397,7 +1393,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -1429,7 +1425,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -1473,8 +1469,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1509,7 +1504,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "editorMode": "code",
           "expr": "avg by(controller, action) (ruby_http_request_sql_duration_seconds{service=\"main-web\"})",
@@ -1524,7 +1519,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -1568,8 +1563,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1604,7 +1598,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "editorMode": "code",
           "expr": "avg(ruby_http_request_duration_seconds) by(controller, action)",
@@ -1619,7 +1613,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -1663,8 +1657,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1699,7 +1692,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "editorMode": "builder",
           "expr": "sum(ruby_active_record_connection_pool_connections)",
@@ -1714,7 +1707,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -1758,8 +1751,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1794,7 +1786,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "editorMode": "builder",
           "expr": "sum(ruby_active_record_connection_pool_waiting{service=\"main-web\"})",
@@ -1809,7 +1801,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -1853,8 +1845,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1889,7 +1880,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "editorMode": "builder",
           "expr": "sum(ruby_active_record_connection_pool_busy)",
@@ -1904,7 +1895,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -1948,8 +1939,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1984,7 +1974,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "editorMode": "builder",
           "expr": "sum(ruby_active_record_connection_pool_idle)",
@@ -2004,9 +1994,9 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "Thanos",
-          "value": "edzaqq6d0854wc"
+          "selected": true,
+          "text": "default",
+          "value": "default"
         },
         "hide": 0,
         "includeAll": false,
@@ -2014,6 +2004,7 @@
         "name": "Datasource",
         "options": [],
         "query": "prometheus",
+        "queryValue": "",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2021,7 +2012,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "main",
           "value": "main"
         },
@@ -2231,7 +2222,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-3h",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
@@ -2248,7 +2239,7 @@
   },
   "timezone": "Europe/Helsinki",
   "title": "Backend",
-  "uid": "dda47547-b950-49ce-8e7c-80b14c60df1f",
-  "version": 45,
+  "uid": "adzgy75942br4e",
+  "version": 2,
   "weekStart": "monday"
 }

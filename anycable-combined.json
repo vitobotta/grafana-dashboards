@@ -35,7 +35,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -84,7 +84,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "anycable_go_clients_num",
           "interval": "",
@@ -94,7 +94,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "anycable_go_clients_uniq_num",
           "interval": "",
@@ -139,7 +139,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -182,7 +182,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "rate(anycable_go_rpc_call_total[$__rate_interval])",
           "interval": "",
@@ -192,7 +192,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "rate(anycable_go_rpc_error_total[$__rate_interval])",
           "interval": "",
@@ -202,7 +202,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "rate(anycable_go_rpc_retries_total[$__rate_interval])",
           "interval": "",
@@ -212,7 +212,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "rate(anycable_go_rpc_pending_num[$__rate_interval])",
           "interval": "",
@@ -257,7 +257,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -314,7 +314,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "increase(anycable_go_broadcast_msg_total[$__rate_interval])",
           "interval": "10s",
@@ -324,7 +324,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "increase(anycable_go_failed_broadcast_msg_total[$__rate_interval])",
           "interval": "10s",
@@ -370,7 +370,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -416,7 +416,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "exemplar": true,
           "expr": "histogram_quantile(0.95, sum(rate(anycable_rpc_call_runtime_seconds_bucket[1m])) by (method,command,le))",
@@ -463,7 +463,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -520,7 +520,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "rate(anycable_go_client_msg_total[$__rate_interval])",
           "interval": "",
@@ -530,7 +530,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "rate(anycable_go_failed_client_msg_total[$__rate_interval])",
           "interval": "",
@@ -576,7 +576,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -622,7 +622,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "exemplar": true,
           "expr": "sum(rate(anycable_rpc_call_count[1m])) by (method, command, status)",
@@ -666,7 +666,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -717,7 +717,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "exemplar": true,
           "expr": "anycable_go_failed_auths_total",
@@ -732,7 +732,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -781,7 +781,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "exemplar": true,
           "expr": "anycable_go_disconnect_queue_size",
@@ -800,7 +800,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "description": "This is memory usage reported by anycable-go itself",
       "fieldConfig": {
@@ -850,7 +850,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "anycable_go_mem_sys_bytes",
           "interval": "",
@@ -891,7 +891,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fieldConfig": {
         "defaults": {
@@ -971,7 +971,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "exemplar": true,
           "expr": "anycable_go_data_rcvd_total",
@@ -983,7 +983,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "exemplar": true,
           "expr": "anycable_go_data_sent_total",
@@ -1003,7 +1003,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -1046,7 +1046,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "expr": "anycable_go_goroutines_num",
           "interval": "",

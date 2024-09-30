@@ -34,7 +34,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "gridPos": {
         "h": 1,
@@ -48,7 +48,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "refId": "A"
         }
@@ -756,7 +756,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "default"
       },
       "gridPos": {
         "h": 1,
@@ -770,7 +770,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "default"
           },
           "refId": "A"
         }

@@ -2366,7 +2366,7 @@
       {
         "current": {
           "selected": false,
-          "text": "Thanos",
+          "text": "default",
           "value": "edzaqq6d0854wc"
         },
         "hide": 0,
@@ -2376,7 +2376,7 @@
         "options": [],
         "query": "prometheus",
         "refresh": 1,
-        "regex": "Thanos",
+        "regex": "default",
         "skipUrlSync": false,
         "type": "datasource"
       },

@@ -11,12 +11,6 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
-        "target": {
-          "limit": 100,
-          "matchAny": false,
-          "tags": [],
-          "type": "dashboard"
-        },
         "type": "dashboard"
       }
     ]
@@ -24,11 +18,10 @@
   "description": "Loki v2+ showcase using JSON NGINX access logs.",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": 12559,
+  "gnetId": 14752,
   "graphTooltip": 0,
-  "id": 981,
+  "id": 2675,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
@@ -39,7 +32,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 0
       },
       "id": 24,
       "panels": [],
@@ -56,8 +49,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "$datasource"
       },
       "description": "",
       "fieldConfig": {
@@ -65,7 +57,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "decimals": 1,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -84,11 +75,11 @@
         "h": 4,
         "w": 5,
         "x": 0,
-        "y": 10
+        "y": 1
       },
       "hideTimeOverride": false,
       "id": 4,
-      "maxDataPoints": 100,
+      "maxDataPoints": 300,
       "options": {
         "colorMode": "background",
         "graphMode": "area",
@@ -96,29 +87,29 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "sum"
           ],
           "fields": "",
           "values": false
         },
+        "showPercentChange": false,
         "text": {},
-        "textMode": "value"
+        "textMode": "value",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "$datasource"
           },
-          "editorMode": "code",
-          "expr": "sum(increase(nginx_ingress_controller_requests{ ingress=~\"main\"}[${__range_s}s]))",
-          "range": true,
+          "expr": "sum by(host) (count_over_time({$label_name=~\"$label_value\", job=~\"$job\", instance=~\"$instance\"}[$__interval]))  ",
+          "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Total requests  in the selected period",
-      "transformations": [],
+      "timeFrom": "24h",
+      "title": "Total requests  ",
       "type": "stat"
     },
     {
@@ -153,7 +144,7 @@
         "h": 8,
         "w": 7,
         "x": 5,
-        "y": 10
+        "y": 1
       },
       "id": 5,
       "maxDataPoints": 20,
@@ -169,10 +160,12 @@
           "fields": "",
           "values": false
         },
+        "showPercentChange": false,
         "text": {},
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -186,7 +179,6 @@
         }
       ],
       "title": "Requests per status code",
-      "transformations": [],
       "type": "stat"
     },
     {
@@ -218,7 +210,7 @@
         "h": 4,
         "w": 3,
         "x": 12,
-        "y": 10
+        "y": 1
       },
       "id": 30,
       "maxDataPoints": 1,
@@ -234,10 +226,12 @@
           "fields": "",
           "values": false
         },
+        "showPercentChange": false,
         "text": {},
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -281,7 +275,7 @@
         "h": 4,
         "w": 3,
         "x": 15,
-        "y": 10
+        "y": 1
       },
       "id": 8,
       "maxDataPoints": 1,
@@ -297,10 +291,12 @@
           "fields": "",
           "values": false
         },
+        "showPercentChange": false,
         "text": {},
-        "textMode": "value"
+        "textMode": "value",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -314,32 +310,36 @@
         }
       ],
       "title": "Total Bytes Sent",
-      "transformations": [],
       "type": "stat"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "Thanos"
+        "uid": "fdzgxe3ekjc3kf"
       },
       "description": "",
       "gridPos": {
         "h": 4,
         "w": 6,
         "x": 18,
-        "y": 10
+        "y": 1
       },
       "id": 34,
       "options": {
-        "content": "📊 Dashboard created by Ward Bekker (hope you like it!)\n\n🐦 Follow me on [Twitter](https://twitter.com/wardbekker) & [LinkedIn](https://www.linkedin.com/in/wardbekker/) for  Grafana Loki updates \n\n🎥 Check out my [Grafana Loki video's](https://www.youtube.com/playlist?list=PLDGkOdUX1UjqEzcxQrbROMy8DN7MZv_h4) on Youtube",
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "? Dashboard created by Ward Bekker (hope you like it!)\n\n? Follow me on [Twitter](https://twitter.com/wardbekker) & [LinkedIn](https://www.linkedin.com/in/wardbekker/) for  Grafana Loki updates \n\n? Check out my [Grafana Loki video's](https://www.youtube.com/playlist?list=PLDGkOdUX1UjqEzcxQrbROMy8DN7MZv_h4) on Youtube",
         "mode": "markdown"
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "Thanos"
+            "uid": "fdzgxe3ekjc3kf"
           },
           "refId": "A"
         }
@@ -349,6 +349,7 @@
     },
     {
       "datasource": {
+        "type": "loki",
         "uid": "$datasource"
       },
       "description": "",
@@ -374,7 +375,7 @@
         "h": 4,
         "w": 5,
         "x": 0,
-        "y": 14
+        "y": 5
       },
       "id": 22,
       "interval": "5m",
@@ -390,25 +391,28 @@
           "fields": "",
           "values": false
         },
+        "showPercentChange": false,
         "text": {},
-        "textMode": "value"
+        "textMode": "value",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "uid": "$datasource"
           },
-          "expr": "count(sum by (remote_addr) (count_over_time({$label_name=~\"$label_value\", job=~\"$job\", instance=~\"$instance\"} | json |  __error__=\"\" [$__interval])))",
+          "editorMode": "code",
+          "expr": "count(sum by (remote_addr) (count_over_time({$label_name=~\"$label_value\", job=~\"$job\", instance=~\"$instance\"} | json http_host=\"main.production.brella.io\" |  __error__=\"\" [$__interval])))",
           "instant": true,
           "legendFormat": "",
+          "queryType": "range",
           "range": false,
           "refId": "A"
         }
       ],
       "timeFrom": "5m",
-      "title": "Requests",
-      "transformations": [],
+      "title": "Realtime visitors ",
       "type": "stat"
     },
     {
@@ -440,7 +444,7 @@
         "h": 4,
         "w": 3,
         "x": 12,
-        "y": 14
+        "y": 5
       },
       "id": 31,
       "maxDataPoints": 1,
@@ -456,10 +460,12 @@
           "fields": "",
           "values": false
         },
+        "showPercentChange": false,
         "text": {},
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -509,11 +515,10 @@
         "h": 4,
         "w": 3,
         "x": 15,
-        "y": 14
+        "y": 5
       },
       "hideTimeOverride": true,
       "id": 19,
-      "links": [],
       "maxDataPoints": 1,
       "options": {
         "colorMode": "background",
@@ -527,10 +532,12 @@
           "fields": "",
           "values": false
         },
+        "showPercentChange": false,
         "text": {},
-        "textMode": "value"
+        "textMode": "value",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -577,12 +584,11 @@
         "h": 4,
         "w": 6,
         "x": 18,
-        "y": 14
+        "y": 5
       },
       "hideTimeOverride": true,
       "id": 18,
       "interval": "10m",
-      "links": [],
       "maxDataPoints": 1,
       "options": {
         "colorMode": "background",
@@ -596,10 +602,12 @@
           "fields": "",
           "values": false
         },
+        "showPercentChange": false,
         "text": {},
-        "textMode": "value"
+        "textMode": "value",
+        "wideLayout": true
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -623,9 +631,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
           "custom": {
             "hideFrom": {
               "legend": false,
@@ -658,46 +663,66 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 9
       },
       "id": 14,
       "maxDataPoints": 1,
       "options": {
         "basemap": {
-          "config": {
-            "server": "streets"
-          },
-          "name": "Layer 0",
-          "type": "esri-xyz"
+          "name": "Basemap",
+          "type": "default"
         },
         "controls": {
           "mouseWheelZoom": false,
           "showAttribution": true,
           "showDebug": false,
+          "showMeasure": false,
           "showScale": false,
           "showZoom": true
         },
         "layers": [
           {
             "config": {
-              "color": {
-                "fixed": "semi-dark-blue"
-              },
-              "fillOpacity": 0.3,
-              "shape": "circle",
               "showLegend": true,
-              "size": {
-                "field": "Value",
-                "fixed": 5,
-                "max": 50,
-                "min": 10
+              "style": {
+                "color": {
+                  "fixed": "dark-green"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 50,
+                  "min": 15
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
               }
             },
             "location": {
-              "lookup": "Metric",
+              "gazetteer": "public/gazetteer/countries.json",
               "mode": "lookup"
             },
-            "name": "Layer 1",
+            "name": "",
+            "tooltip": true,
             "type": "markers"
           }
         ],
@@ -705,13 +730,14 @@
           "mode": "details"
         },
         "view": {
+          "allLayers": true,
           "id": "zero",
           "lat": 0,
           "lon": 0,
           "zoom": 2
         }
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -727,8 +753,12 @@
       "title": "Requests per Country",
       "transformations": [
         {
-          "id": "seriesToRows",
-          "options": {}
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
         }
       ],
       "type": "geomap"
@@ -745,7 +775,9 @@
           },
           "custom": {
             "align": "center",
-            "displayMode": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
             "filterable": false,
             "inspect": false
           },
@@ -755,42 +787,42 @@
                 "CN": {
                   "color": "transparent",
                   "index": 4,
-                  "text": "🇨🇳CN"
+                  "text": "??CN"
                 },
                 "DE": {
                   "color": "transparent",
                   "index": 2,
-                  "text": "🇩🇪DE"
+                  "text": "??DE"
                 },
                 "FR": {
                   "color": "transparent",
                   "index": 3,
-                  "text": "🇫🇷FR"
+                  "text": "??FR"
                 },
                 "GB": {
                   "color": "transparent",
                   "index": 7,
-                  "text": "🇬🇧GB"
+                  "text": "??GB"
                 },
                 "IN": {
                   "color": "transparent",
                   "index": 5,
-                  "text": "🇮🇳IN"
+                  "text": "??IN"
                 },
                 "IT": {
                   "color": "transparent",
                   "index": 6,
-                  "text": "🇮🇹IT"
+                  "text": "??IT"
                 },
                 "NL": {
                   "color": "transparent",
                   "index": 1,
-                  "text": "🇳🇱NL"
+                  "text": "??NL"
                 },
                 "US": {
                   "color": "transparent",
                   "index": 0,
-                  "text": "🇺🇸 US"
+                  "text": "?? US"
                 }
               },
               "type": "value"
@@ -812,13 +844,15 @@
         "h": 11,
         "w": 3,
         "x": 12,
-        "y": 18
+        "y": 9
       },
       "hideTimeOverride": true,
       "id": 32,
       "maxDataPoints": 1,
       "options": {
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
           "fields": "",
           "reducer": [
             "sum"
@@ -833,7 +867,7 @@
           }
         ]
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -884,7 +918,7 @@
         "h": 11,
         "w": 9,
         "x": 15,
-        "y": 18
+        "y": 9
       },
       "id": 11,
       "options": {
@@ -919,7 +953,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 20
       },
       "id": 26,
       "panels": [],
@@ -936,7 +970,6 @@
     },
     {
       "datasource": {
-        "type": "loki",
         "uid": "$datasource"
       },
       "description": "",
@@ -946,6 +979,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -955,11 +989,11 @@
             "fillOpacity": 100,
             "gradientMode": "hue",
             "hideFrom": {
-              "graph": false,
               "legend": false,
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
@@ -974,7 +1008,7 @@
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
           "mappings": [],
@@ -1046,7 +1080,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 30
+        "y": 21
       },
       "id": 16,
       "maxDataPoints": 50,
@@ -1058,6 +1092,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -1068,11 +1103,17 @@
           "datasource": {
             "uid": "$datasource"
           },
-          "editorMode": "code",
-          "expr": "quantile_over_time(0.95,{$label_name=~\"$label_value\", job=~\"$job\", instance=~\"$instance\"} !~ `socket|background_jobs` | json  | unwrap request_time |  __error__=\"\"  [$__interval]) by (host)",
+          "expr": "quantile_over_time(0.95,{$label_name=~\"$label_value\", job=~\"$job\", instance=~\"$instance\"} | json | unwrap request_time |  __error__=\"\"  [$__interval]) by (host)",
           "legendFormat": "95th percentile",
-          "queryType": "range",
           "refId": "C"
+        },
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "expr": "max by (host) (max_over_time({$label_name=~\"$label_value\", job=~\"$job\", instance=~\"$instance\"} | json | unwrap request_time |  __error__=\"\"  [$__interval]))",
+          "legendFormat": "max latency",
+          "refId": "D"
         }
       ],
       "title": "95th percentile of Request Time",
@@ -1089,6 +1130,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -1098,11 +1140,11 @@
             "fillOpacity": 39,
             "gradientMode": "hue",
             "hideFrom": {
-              "graph": false,
               "legend": false,
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
@@ -1249,7 +1291,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 30
+        "y": 21
       },
       "id": 2,
       "maxDataPoints": 50,
@@ -1261,6 +1303,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -1308,6 +1351,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -1317,11 +1361,11 @@
             "fillOpacity": 100,
             "gradientMode": "hue",
             "hideFrom": {
-              "graph": false,
               "legend": false,
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
@@ -1391,7 +1435,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 30
+        "y": 21
       },
       "id": 9,
       "maxDataPoints": 50,
@@ -1403,6 +1447,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -1419,7 +1464,6 @@
         }
       ],
       "title": "Bytes Sent",
-      "transformations": [],
       "type": "timeseries"
     },
     {
@@ -1431,7 +1475,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 30
       },
       "id": 28,
       "panels": [],
@@ -1457,8 +1501,9 @@
             "mode": "thresholds"
           },
           "custom": {
-            "align": "auto",
-            "displayMode": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
             "filterable": false,
             "inspect": false
           },
@@ -1467,7 +1512,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1484,8 +1530,11 @@
             },
             "properties": [
               {
-                "id": "custom.displayMode",
-                "value": "gradient-gauge"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge"
+                }
               },
               {
                 "id": "color",
@@ -1513,12 +1562,14 @@
         "h": 6,
         "w": 9,
         "x": 0,
-        "y": 40
+        "y": 31
       },
       "id": 6,
       "maxDataPoints": 1,
       "options": {
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
           "fields": "",
           "reducer": [
             "sum"
@@ -1533,7 +1584,7 @@
           }
         ]
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -1578,8 +1629,9 @@
             "mode": "thresholds"
           },
           "custom": {
-            "align": "auto",
-            "displayMode": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
             "filterable": false,
             "inspect": false
           },
@@ -1588,7 +1640,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1609,8 +1662,11 @@
                 "value": 300
               },
               {
-                "id": "custom.displayMode",
-                "value": "gradient-gauge"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge"
+                }
               },
               {
                 "id": "color",
@@ -1626,12 +1682,14 @@
         "h": 6,
         "w": 15,
         "x": 9,
-        "y": 40
+        "y": 31
       },
       "id": 7,
       "maxDataPoints": 1,
       "options": {
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
           "fields": "",
           "reducer": [
             "sum"
@@ -1646,7 +1704,7 @@
           }
         ]
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -1692,21 +1750,21 @@
             "mode": "thresholds"
           },
           "custom": {
-            "align": "auto",
-            "displayMode": "auto",
-            "filterable": false,
-            "inspect": false
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": false
           },
           "mappings": [
             {
               "options": {
                 "NL": {
                   "index": 1,
-                  "text": "🇳🇱"
+                  "text": "??"
                 },
                 "US": {
                   "index": 0,
-                  "text": "🇺🇸"
+                  "text": "??"
                 }
               },
               "type": "value"
@@ -1737,8 +1795,11 @@
                 "value": 300
               },
               {
-                "id": "custom.displayMode",
-                "value": "gradient-gauge"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge"
+                }
               },
               {
                 "id": "color",
@@ -1766,18 +1827,11 @@
         "h": 8,
         "w": 9,
         "x": 0,
-        "y": 46
+        "y": 37
       },
       "id": 3,
       "maxDataPoints": 1,
       "options": {
-        "footer": {
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
         "showHeader": true,
         "sortBy": [
           {
@@ -1786,7 +1840,7 @@
           }
         ]
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "8.0.0-beta3",
       "targets": [
         {
           "datasource": {
@@ -1838,10 +1892,10 @@
             "mode": "thresholds"
           },
           "custom": {
-            "align": "auto",
-            "displayMode": "auto",
-            "filterable": false,
-            "inspect": false
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": false
           },
           "mappings": [],
           "thresholds": {
@@ -1869,8 +1923,11 @@
                 "value": 300
               },
               {
-                "id": "custom.displayMode",
-                "value": "gradient-gauge"
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge"
+                }
               },
               {
                 "id": "color",
@@ -1886,18 +1943,11 @@
         "h": 8,
         "w": 15,
         "x": 9,
-        "y": 46
+        "y": 37
       },
       "id": 12,
       "maxDataPoints": 1,
       "options": {
-        "footer": {
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
         "showHeader": true,
         "sortBy": [
           {
@@ -1906,7 +1956,7 @@
           }
         ]
       },
-      "pluginVersion": "9.1.4",
+      "pluginVersion": "8.0.0-beta3",
       "targets": [
         {
           "datasource": {
@@ -1943,8 +1993,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 37,
-  "style": "dark",
+  "schemaVersion": 39,
   "tags": [],
   "templating": {
     "list": [
@@ -1952,7 +2001,7 @@
         "current": {
           "selected": false,
           "text": "Loki",
-          "value": "Loki"
+          "value": "cdzgxhlvhgp34c"
         },
         "hide": 0,
         "includeAll": false,
@@ -2077,6 +2126,7 @@
     "from": "now-1h",
     "to": "now"
   },
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {
     "refresh_intervals": [
       "10s",
@@ -2093,6 +2143,6 @@
   "timezone": "",
   "title": "Grafana Loki Dashboard for NGINX Service Mesh",
   "uid": "Nz6kKgtGj",
-  "version": 6,
+  "version": 1,
   "weekStart": ""
 }
