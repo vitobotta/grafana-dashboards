@@ -132,7 +132,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fdzgxe3ekjc3kf"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -269,7 +269,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "default"
+        "uid": "Thanos"
       },
       "description": "",
       "fieldConfig": {
@@ -356,10 +356,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "default"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
+          "editorMode": "code",
           "expr": "avg(kube_horizontalpodautoscaler_status_current_replicas{horizontalpodautoscaler=~\"$hpa_web\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -371,7 +371,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "default"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -388,7 +388,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "default"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -405,7 +405,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "default"
+            "uid": "Thanos"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -573,7 +573,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fdzgxe3ekjc3kf"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -769,7 +769,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "fdzgxe3ekjc3kf"
+        "uid": "Thanos"
       },
       "fieldConfig": {
         "defaults": {
@@ -2101,7 +2101,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "default",
           "value": "default"
         },
@@ -2329,7 +2329,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-15m",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
@@ -2347,6 +2347,6 @@
   "timezone": "Europe/Helsinki",
   "title": "Backend",
   "uid": "adzgy75942br4e",
-  "version": 9,
+  "version": 10,
   "weekStart": "monday"
 }
