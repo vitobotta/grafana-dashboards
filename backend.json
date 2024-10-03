@@ -132,7 +132,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "default"
+        "uid": "fdzgxe3ekjc3kf"
       },
       "fieldConfig": {
         "defaults": {
@@ -239,7 +239,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "sum(attendee_count{service=~\"$attendee_count_export_service\"})",
+          "expr": "avg(brella_attendee_count{service=~\"$metrics_export_service\"})",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -1338,7 +1338,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1455,7 +1456,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1568,7 +1570,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1662,7 +1665,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1756,7 +1760,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1850,7 +1855,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1944,7 +1950,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2038,7 +2045,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2132,21 +2140,21 @@
       {
         "current": {
           "selected": false,
-          "text": "main-attendee-count-exporter",
-          "value": "main-attendee-count-exporter"
+          "text": "main-metrics-exporter",
+          "value": "main-metrics-exporter"
         },
         "hide": 2,
         "includeAll": false,
         "multi": false,
-        "name": "attendee_count_export_service",
+        "name": "metrics_export_service",
         "options": [
           {
             "selected": true,
-            "text": "main-attendee-count-exporter",
-            "value": "main-attendee-count-exporter"
+            "text": "main-metrics-exporter",
+            "value": "main-metrics-exporter"
           }
         ],
-        "query": "$branch-attendee-count-exporter",
+        "query": "$branch-metrics-exporter",
         "skipUrlSync": false,
         "type": "custom"
       },
@@ -2321,7 +2329,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-6h",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
@@ -2339,6 +2347,6 @@
   "timezone": "Europe/Helsinki",
   "title": "Backend",
   "uid": "adzgy75942br4e",
-  "version": 5,
+  "version": 9,
   "weekStart": "monday"
 }
