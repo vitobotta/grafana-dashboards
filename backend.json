@@ -224,7 +224,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(avg_over_time(anycable_go_clients_uniq_num{service=\"$anycable_go_service\"}[$__interval]))",
+          "expr": "avg(anycable_go_clients_uniq_num{service=\"$anycable_go_service\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "interval": "",
@@ -240,7 +240,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(avg_over_time(brella_attendee_count{service=~\"$metrics_export_service\"}[$__interval]))",
+          "expr": "avg(brella_attendee_count{service=~\"$metrics_export_service\"})",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -362,7 +362,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(avg_over_time(kube_horizontalpodautoscaler_status_current_replicas{horizontalpodautoscaler=~\"$hpa_web\"}[$__interval]))",
+          "expr": "avg(max_over_time(kube_horizontalpodautoscaler_status_current_replicas{horizontalpodautoscaler=~\"$hpa_web\"}[$__interval]))",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "Web",
@@ -377,7 +377,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(avg_over_time(kube_horizontalpodautoscaler_status_current_replicas{horizontalpodautoscaler=\"$hpa_worker\"}[$__interval]))",
+          "expr": "avg(max_over_time(kube_horizontalpodautoscaler_status_current_replicas{horizontalpodautoscaler=\"$hpa_worker\"}[$__interval]))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -394,7 +394,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(avg_over_time(kube_horizontalpodautoscaler_status_current_replicas{horizontalpodautoscaler=\"$hpa_ws\"}[$__interval]))",
+          "expr": "avg(max_over_time(kube_horizontalpodautoscaler_status_current_replicas{horizontalpodautoscaler=\"$hpa_ws\"}[$__interval]))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -411,7 +411,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(avg_over_time(kube_horizontalpodautoscaler_status_current_replicas{horizontalpodautoscaler=\"$hpa_rpc\"}[$__interval]))",
+          "expr": "avg(max_over_time(kube_horizontalpodautoscaler_status_current_replicas{horizontalpodautoscaler=\"$hpa_rpc\"}[$__interval]))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -661,7 +661,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "sum by (service) (avg_over_time(ruby_puma_max_threads{service=\"$web_service\"}[$__interval]))",
+          "expr": "sum by (service) (ruby_puma_max_threads{service=\"$web_service\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "Max Threads",
@@ -760,7 +760,7 @@
             "uid": "default"
           },
           "editorMode": "code",
-          "expr": "round(\n  (\n    sum by (service) (avg_over_time(ruby_puma_max_threads{service=\"$web_service\"}[$__interval])) -\n    sum by (service) (avg_over_time(ruby_puma_thread_pool_capacity{service=\"$web_service\"}[$__interval]))\n  ) /\n  sum by (service) (avg_over_time(ruby_puma_max_threads{service=\"$web_service\"}[$__interval]))\n  * 100\n)",
+          "expr": "round(\n  (\n    sum by (service) (ruby_puma_max_threads{service=\"$web_service\"}) -\n    sum by (service) (ruby_puma_thread_pool_capacity{service=\"$web_service\"})\n  ) /\n  sum by (service) (ruby_puma_max_threads{service=\"$web_service\"})\n  * 100\n)",
           "hide": false,
           "instant": false,
           "legendFormat": "Puma Thread Pool Utilization %",
@@ -858,7 +858,7 @@
             "uid": "default"
           },
           "editorMode": "code",
-          "expr": "sum by (service) (avg_over_time(ruby_puma_request_backlog{service=\"$web_service\"}[$__interval]))",
+          "expr": "sum by (service) (ruby_puma_request_backlog{service=\"$web_service\"})",
           "hide": false,
           "instant": false,
           "legendFormat": "Puma Thread Pool Utilization %",
@@ -1170,7 +1170,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(avg_over_time(ruby_http_request_duration_seconds{service=\"$web_service\"}[$__interval]))",
+          "expr": "avg(ruby_http_request_duration_seconds{service=\"$web_service\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "Avg Response Time",
@@ -1392,7 +1392,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(sum by(pod) (avg_over_time(ruby_rss{service=\"$web_service\"}[$__interval])))",
+          "expr": "avg(sum by(pod) (ruby_rss{service=\"$web_service\"}))",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "Web",
@@ -1407,7 +1407,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(sum by(pod) (avg_over_time(ruby_rss{service=\"$worker_service\"}[$__interval])))",
+          "expr": "avg(sum by(pod) (ruby_rss{service=\"$worker_service\"}))",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -1622,7 +1622,7 @@
             "uid": "default"
           },
           "editorMode": "code",
-          "expr": "avg by(controller, action) (avg_over_time(ruby_http_request_sql_duration_seconds{service=\"main-web\"}[$__interval]))",
+          "expr": "avg by(controller, action) (ruby_http_request_sql_duration_seconds{service=\"main-web\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1718,7 +1718,7 @@
             "uid": "default"
           },
           "editorMode": "code",
-          "expr": "avg by(controller, action) (avg_over_time(ruby_http_request_duration_seconds[$__interval]))",
+          "expr": "avg by(controller, action) (ruby_http_request_duration_seconds)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1814,7 +1814,7 @@
             "uid": "default"
           },
           "editorMode": "code",
-          "expr": "sum(avg_over_time(ruby_active_record_connection_pool_connections[$__interval]))",
+          "expr": "sum(ruby_active_record_connection_pool_connections)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1910,7 +1910,7 @@
             "uid": "default"
           },
           "editorMode": "code",
-          "expr": "sum(avg_over_time(ruby_active_record_connection_pool_waiting{service=\"main-web\"}[$__interval]))",
+          "expr": "sum(ruby_active_record_connection_pool_waiting{service=\"main-web\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2006,7 +2006,7 @@
             "uid": "default"
           },
           "editorMode": "code",
-          "expr": "sum(avg_over_time(ruby_active_record_connection_pool_busy[$__interval]))",
+          "expr": "sum(ruby_active_record_connection_pool_busy)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2102,7 +2102,7 @@
             "uid": "default"
           },
           "editorMode": "code",
-          "expr": "sum(avg_over_time(ruby_active_record_connection_pool_idle[$__interval]))",
+          "expr": "sum(ruby_active_record_connection_pool_idle)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2120,8 +2120,8 @@
       {
         "current": {
           "selected": false,
-          "text": "Thanos",
-          "value": "fdzgxe3ekjc3kf"
+          "text": "default",
+          "value": "default"
         },
         "hide": 0,
         "includeAll": false,
@@ -2347,7 +2347,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-24h",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
@@ -2365,6 +2365,6 @@
   "timezone": "Europe/Helsinki",
   "title": "Backend",
   "uid": "adzgy75942br4e",
-  "version": 22,
+  "version": 24,
   "weekStart": "monday"
 }
