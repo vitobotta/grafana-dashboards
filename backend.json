@@ -224,7 +224,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg(anycable_go_clients_uniq_num{service=\"$anycable_go_service\"})",
+          "expr": "sum(anycable_go_clients_uniq_num{service=\"$anycable_go_service\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "interval": "",
