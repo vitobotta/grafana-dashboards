@@ -631,6 +631,9 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
           "custom": {
             "hideFrom": {
               "legend": false,
@@ -686,9 +689,10 @@
               "showLegend": true,
               "style": {
                 "color": {
+                  "field": "Total",
                   "fixed": "dark-green"
                 },
-                "opacity": 0.4,
+                "opacity": 1,
                 "rotation": {
                   "fixed": 0,
                   "max": 360,
@@ -708,12 +712,17 @@
                   "horizontal": "center",
                   "vertical": "center"
                 },
+                "text": {
+                  "field": "Total",
+                  "fixed": "",
+                  "mode": "field"
+                },
                 "textConfig": {
                   "fontSize": 12,
                   "offsetX": 0,
                   "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
+                  "textAlign": "left",
+                  "textBaseline": "top"
                 }
               }
             },
@@ -721,7 +730,7 @@
               "gazetteer": "public/gazetteer/countries.json",
               "mode": "lookup"
             },
-            "name": "",
+            "name": "Layer 0",
             "tooltip": true,
             "type": "markers"
           }
@@ -1512,8 +1521,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1640,8 +1648,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2123,7 +2130,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-5m",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
@@ -2143,6 +2150,6 @@
   "timezone": "",
   "title": "Grafana Loki Dashboard for NGINX Service Mesh",
   "uid": "Nz6kKgtGj",
-  "version": 1,
+  "version": 3,
   "weekStart": ""
 }
